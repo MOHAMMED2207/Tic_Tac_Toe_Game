@@ -3,7 +3,7 @@ import { GameContext } from "../App/GameContext";
 import { ContextModel } from "../App/ContextApp";
 
 const Restart = () => {
-  const { RestGame } = useContext(GameContext);
+  const { setsquarees } = useContext(GameContext);
   const { setShow } = useContext(ContextModel);
   return (
     <div className="restart">
@@ -12,10 +12,13 @@ const Restart = () => {
         <button onClick={() => setShow(false)} className="btn btn-sm">
           no, cancal
         </button>
-        <button onClick={()=>{
-          setShow(false)
-          RestGame()
-        }} className="btn btn-yellow btn-sm">
+        <button
+          onClick={() => {
+            setShow(false);
+            setsquarees(new Array(9).fill(""));
+          }}
+          className="btn btn-yellow btn-sm"
+        >
           yes, restart
         </button>
       </div>
