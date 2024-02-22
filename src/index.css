@@ -23,6 +23,7 @@
   --shadow-y: 6px;
 }
 
+
 html {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-transform: uppercase;
@@ -360,4 +361,9 @@ body {
   align-items: center;
   justify-content: center;
   gap: 15px;
+}
+
+.space {
+  display: flex;
+  flex-direction: column;
 }
