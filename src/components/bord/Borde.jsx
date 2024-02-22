@@ -78,16 +78,18 @@ const Borde = () => {
       </div>
       <div className="board__footer">
         <div className="card bg-blue">
-          <p className="text-light">{Active} (you)</p>
+          <p className="text-light space">
+            X <span>{Active === "x" ? "(you)" : "(Player)"}</span>
+          </p>
           <strong className="text-2xl">{Ties.x}</strong>
         </div>
         <div className="card bg-light">
-          <p className="text-light">ties</p>
+          <p className="text-light space">ties<span>( X & O )</span></p>
           <strong className="text-2xl">{Ties.x + Ties.o}</strong>
         </div>
         <div className="card bg-yellow">
-          <p className="text-light">
-            {Active === "x" ? "o" : "x"} ({PlayMood})
+          <p className="text-light space">
+            O <span>{Active !== "x" ? "(you)" : "(Player)"}</span>
           </p>
           <strong className="text-2xl">{Ties.o}</strong>
         </div>
