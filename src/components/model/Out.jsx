@@ -2,13 +2,12 @@ import React, { useContext } from "react";
 import { GameContext } from "../App/GameContext";
 import { ContextModel } from "../App/ContextApp";
 
-const Out = () => {
-  const { setGameUI } = useContext(GameContext);
+const Restart = () => {
+  const { setsquarees } = useContext(GameContext);
   const { setShow } = useContext(ContextModel);
-
   return (
     <div className="restart">
-      <h3 className="restart__title">Qut Game?</h3>
+      <h3 className="restart__title">Restart Game?</h3>
       <div className="restart__btns">
         <button onClick={() => setShow(false)} className="btn btn-sm">
           no, cancal
@@ -16,15 +15,15 @@ const Out = () => {
         <button
           onClick={() => {
             setShow(false);
-            setGameUI("start");
+            setsquarees(new Array(9).fill(""));
           }}
           className="btn btn-yellow btn-sm"
         >
-          yes, Qut GAME
+          yes, restart
         </button>
       </div>
     </div>
   );
 };
 
-export default Out;
+export default Restart;
